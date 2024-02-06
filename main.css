@@ -7,6 +7,10 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    background-color: #fff;
+    top: 0;
+    z-index: 1;
 }
 .header__logo{
     height: 30px;
@@ -41,6 +45,19 @@ button{
     width: 100px;
     height: 100px;
     position: absolute;
+    animation-name: rotation;
+    transform: rotate(20deg);
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes rotation{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
 }
 .about__info{
     max-width: 550px;
@@ -200,4 +217,51 @@ button:hover{
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
+}
+@media (max-width:1024px){
+    .about__sun-image{
+        width: 75px;
+        height: 75px;
+    }
+    .about h1{
+        font-size: 36px;
+        line-height: 40px;
+    }
+    .about__image{
+        width: 280px;
+        margin-right: 20px;
+    }
+    .about__info{
+        margin-left: 20px;
+    }
+}
+@media (max-width: 720px){
+    .about h1{
+        font-size: 36px;
+        line-height: 40px;
+        margin-left: 10px;
+    }
+    .footer__container{
+        display: block;
+    }
+    .about{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .about button{
+        margin-left: 10px;
+    }
+    .about p{
+        margin-left: 10px;
+    }
+    .about__sun-image{
+        width: 75px;
+        height: 75px;
+    }
+    .about__image{
+        width: 280px;
+    }
+    .header__logo{
+        height: 20px;
+    }
 }
